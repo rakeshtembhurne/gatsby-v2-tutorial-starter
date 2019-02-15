@@ -1,7 +1,6 @@
 ---
 path: "/post-six"
 cover: "./image6.jpg"
-date: "2018-10-20"
 title: "Ganesha havan,  perppouse  & sambhavana ( dakshina)"
 tags: ['gatsby', 'tutorial']
 published: true

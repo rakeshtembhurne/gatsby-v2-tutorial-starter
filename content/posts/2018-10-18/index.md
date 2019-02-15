@@ -1,7 +1,6 @@
 ---
 path: "/post-four"
 cover: "./image4.jpg"
-date: "2018-10-18"
 title: "List"
 tags: ['gatsby', 'other']
 published: true

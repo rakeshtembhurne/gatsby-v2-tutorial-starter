@@ -1,7 +1,6 @@
 ---
 path: "/post-five"
 cover: "./image5.jpg"
-date: "2018-10-19"
 title: "Subramanya Pooja and havan for santana"
 tags: ['tutorial', 'javascript', 'frontend']
 published: true
