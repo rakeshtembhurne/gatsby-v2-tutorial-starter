@@ -5,12 +5,12 @@ import PropTypes from 'prop-types';
 import { Header, BlogList } from 'components';
 import { Layout } from 'layouts';
 
-const Blog = ({ data }) => {
+const Posts = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
   return (
     <Layout>
-      <Helmet title={'Blog Page'} />
-      <Header title="Blog Page"></Header>
+      <Helmet title={'Posts Page'} />
+      <Header title="Posts Page"></Header>
       {edges.map(({ node }) => (
         <BlogList
           key={node.id}
@@ -26,9 +26,9 @@ const Blog = ({ data }) => {
   );
 };
 
-export default Blog;
+export default Posts;
 
-Blog.propTypes = {
+Posts.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.arrayOf(
