@@ -38,7 +38,6 @@ const Post = ({ data, pageContext }) => {
       <Header title={title} date={date} cover={image} />
       <Container>
         <Content input={html} />
-        <TagsBlock list={post.frontmatter.tags || []} />
       </Container>
       <SuggestionBar>
         <PostSuggestion>
