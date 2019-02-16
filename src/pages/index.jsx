@@ -33,7 +33,6 @@ const Index = ({ data }) => {
             cover={node.frontmatter.cover.childImageSharp.fluid}
             path={node.frontmatter.path}
             title={node.frontmatter.title}
-            date={node.frontmatter.date}
             excerpt={node.excerpt}
           />
         ))}
@@ -55,7 +54,6 @@ Index.propTypes = {
               cover: PropTypes.object.isRequired,
               path: PropTypes.string.isRequired,
               title: PropTypes.string.isRequired,
-              date: PropTypes.string.isRequired,
               tags: PropTypes.array,
             }),
           }),
@@ -69,7 +67,7 @@ export const query = graphql`
   query {
     allMarkdownRemark(
       limit: 6
-      sort: { order: DESC, fields: [frontmatter___date] }
+      sort: { order: DESC, fields: [frontmatter___title] }
     ) {
       edges {
         node {
@@ -79,7 +77,6 @@ export const query = graphql`
             title
             path
             tags
-            date(formatString: "MM.DD.YYYY")
             cover {
               childImageSharp {
                 fluid(
