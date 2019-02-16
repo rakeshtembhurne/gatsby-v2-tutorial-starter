@@ -10,7 +10,7 @@ const Blog = ({ data }) => {
   return (
     <Layout>
       <Helmet title={'Posts Page'} />
-      <Header title="POsts Page"></Header>
+      <Header title="Posts Page"></Header>
       {edges.map(({ node }) => (
         <BlogList
           key={node.id}
