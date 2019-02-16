@@ -24,8 +24,8 @@ const Index = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
   return (
     <Layout>
-      <Helmet title={'Anand Sharma'} />
-      <Header title="Anand Sharma"></Header>
+      <Helmet title={'Home Page'} />
+      <Header title="Home Page">Gatsby Tutorial Starter</Header>
       <PostWrapper>
         {edges.map(({ node }) => (
           <PostList
@@ -33,6 +33,7 @@ const Index = ({ data }) => {
             cover={node.frontmatter.cover.childImageSharp.fluid}
             path={node.frontmatter.path}
             title={node.frontmatter.title}
+            date={node.frontmatter.date}
             excerpt={node.excerpt}
           />
         ))}
@@ -54,6 +55,7 @@ Index.propTypes = {
               cover: PropTypes.object.isRequired,
               path: PropTypes.string.isRequired,
               title: PropTypes.string.isRequired,
+              date: PropTypes.string.isRequired,
               tags: PropTypes.array,
             }),
           }),
@@ -67,7 +69,7 @@ export const query = graphql`
   query {
     allMarkdownRemark(
       limit: 6
-      sort: { order: DESC, fields: [frontmatter___title] }
+      sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       edges {
         node {
@@ -77,6 +79,7 @@ export const query = graphql`
             title
             path
             tags
+            date(formatString: "MM.DD.YYYY")
             cover {
               childImageSharp {
                 fluid(
